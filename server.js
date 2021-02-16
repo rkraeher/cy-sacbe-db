@@ -1,7 +1,8 @@
 const express = require("express");
+require("dotenv").config();
+const db = require("./models");
 
-// const sequelize =  stuff
-const routes = require("./routes");
+//const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 8080;
 
@@ -12,8 +13,11 @@ app.use(express.json());
 if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
 }
+
 // Add routes, both API and view
-app.use(routes);
+//app.use(routes);
+
+
 
 // Requiring passport as we've configured it
 //const passport = require("./config/passport");
@@ -28,9 +32,17 @@ app.use(routes);
 // app.use(passport.initialize());
 // app.use(passport.session());
 
-// Connect to Sequelize - STUFF
-sequelize.sync().then(() => {
+
+//Successfully connected to MySQL db via sequelize
+//Next, create some models and controllers to begin testing the API
+
+
+db.sequelize.sync().then(() => {
     app.listen(PORT, () => {
         console.log(`==> 🌎  Listening on port ${PORT}.`);
     });
+    //For testing DB connection via sequelize. Can delete 
+    db.sequelize.authenticate();
+    console.log('Sequelize Connection has been established successfully.');
+
 });
