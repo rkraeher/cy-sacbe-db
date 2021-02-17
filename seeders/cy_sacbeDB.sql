@@ -1,0 +1,2 @@
+CREATE DATABASE IF NOT EXISTS cy_sacbeDB;
+USE cy_sacbeDB;
