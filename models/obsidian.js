@@ -2,43 +2,33 @@ module.exports = function (sequelize, DataTypes) {
     const Obsidian = sequelize.define("Obsidian", {
         sample_number: {
             type: DataTypes.INTEGER,
-            allowNull: false
         },
         site: {
             type: DataTypes.STRING,
-            allowNull: false
         },
         year: {
             type: DataTypes.INTEGER,
-            allowNull: false
         },
         bag_number: {
             type: DataTypes.INTEGER,
-            allowNull: false
         },
         operation: {
             type: DataTypes.STRING,
-            allowNull: false
         },
         sub_operation: {
             type: DataTypes.STRING,
-            allowNull: false
         },
         unit: {
             type: DataTypes.STRING,
-            allowNull: false
         },
         level: {
             type: DataTypes.INTEGER,
-            allowNull: false
         },
         lot: {
             type: DataTypes.INTEGER,
-            allowNull: false
         },
         description: {
             type: DataTypes.STRING,
-            allowNull: false
         },
         ceramic_complex: {
             type: DataTypes.STRING,
